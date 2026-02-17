@@ -1,3 +1,6 @@
 body {
     background-color: lightblue;
+    header{background-color: rgb(0, 74, 139);}
+    main{background-color: aliceblue;}
+    footer{background-color: rgb(0, 74, 139);}
   }
