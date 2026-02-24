@@ -6,29 +6,62 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-   
-
-<header>
+<header class="site-header">
   <div class="logo">
    <a href="index.html">Udan</a>
   </div>
-
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="Page1.html">Skill</a>
-      <a href="Page1.html">Education</a>
+      <a href="Page2.html">Education</a>
     </nav>
 
   </header>
-
   <main>
+    <img class="main-img" src="Background.png" alt="Background img">
     <h1 style="text-align: center;">Wellcome to My Dtech Website</h1>
-    <h2>A little about Myself</h2>
-    <p style="text-align:center">I'm Udan. I live in New Zealand. I love Gaming, Watching movies and TV shows and Travelling. My hobbies include Animating, Making games & Making 3D models.</p>
-    <img src="NZ.png" alt="New Zealand Mountains">
-    <a href="https://youtu.be/9J62hGda9BQ?si=lN0-_oj5jJtDcXr6">Nanya Cat</a>
-    <h2>The subjects I took in 11Y</h2>
+    <style>
+.container {
+  display: grid;
+  grid-template-areas:
+    "img header"
+    "content1 content2"
+    "footer footer";
+  grid-template-columns: 2fr 2fr;
+  gap: 3px;
+  background-color: rgb(11, 103, 136);
+  padding: 5px;
+}
+.container div {
+  background-color: transparent;
+  padding: 10px;
+}
+.container div.img{
+grid-area: img;
+text-align: center;
+}
+.container div.header {
+  grid-area: header;
+  text-align: center;
+}
+
+.container div.content1 {
+  grid-area: content1;
+}
+
+.container div.content2 {
+  grid-area: content2;
+}
+.container div.footer {
+  grid-area: footer;
+  text-align: center;  
+}
+</style>
+
+<div class="container">
+  <div class="header"><h2>I'm Udan</h2><p>I love Gaming, Watching movies and TV shows and Travelling. My hobbies include Animating, Making Games & Making 3D modles</p></div>
+  <div class="self-img"><img src="Self Img.png" alt="Self Img"></div>
+  <div class="content1"><h2>The subjects I took in 11Y</h2>
     <ul>
     <li>Calculus</li>
     <li>English</li>
@@ -37,6 +70,8 @@
     <li>Accounting</li>
     <li>Photography</li>
     </ul>
+   </div>
+<div class="content2">
     <h2>My favorite subject from them</h2>
     <ol>
     <li>Digital Technology</li>
@@ -45,9 +80,28 @@
     <li>English</li>
     <li>Accounting</li>
     <li>Photography</li>
-    </ol>
-    </main>
-
+    </ol></div>
+  <div class="footer"><h4>Footer</h4></div>
+</div>
+    <div class="image-container">
+     <img src="Image ratio test Img/test2.jpg" alt="test image2">
+     </div>
+     <div class="image-container">
+     <img src="Image ratio test Img/test3.jpg" alt="test image3">
+    </div>
+    <div class="image-container">
+    <img src="Image ratio test Img/test1.jpg" alt="test image1">
+  </div>
+  <div class="image-container">
+    <img src="Image ratio test Img/test4.jpg" alt="test image4">
+  </div>
+  <div class="image-container">
+    <img src="Image ratio test Img/test5.jpg" alt="test image5">
+    </div>
+   
+  
+  
+  </main>
     <footer>
       <h2>Thank you for visting</h2>
     </footer>
