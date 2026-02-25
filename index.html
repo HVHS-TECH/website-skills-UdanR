@@ -4,14 +4,29 @@
   <title>Udan's Dtech Website</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+<div id="loading-screen">
+    <img src="coffee-cup.gif" alt="Loading..." class="loader-gif">
+</div>
+
+<div id="main-content" style="display: none;">
+
 <header class="site-header">
+  <div class="site-header-top-row">
   <div class="logo">
    <a href="index.html">Udan</a>
   </div>
+
+  <a href="index.html" class="home-icon">
+    <img src="home-normal.png" alt="Home" class="home-normal">
+    <img src="home-hover.png" alt="Home" class="home-hover">
+</a>
+</div>
+
     <nav>
-      <a href="index.html" class="active">Home</a>
       <a href="Page1.html">Skill</a>
       <a href="Page2.html">Education</a>
     </nav>
@@ -43,18 +58,22 @@ text-align: center;
 .container div.header {
   grid-area: header;
   text-align: center;
+  color: white;
 }
 
 .container div.content1 {
   grid-area: content1;
+  color: white;
 }
 
 .container div.content2 {
   grid-area: content2;
+  color: white;
 }
 .container div.footer {
   grid-area: footer;
   text-align: center;  
+  color: white;
 }
 </style>
 
@@ -99,11 +118,29 @@ text-align: center;
     <img src="Image ratio test Img/test5.jpg" alt="test image5">
     </div>
    
-  
+  </div>
+
   
   </main>
     <footer>
       <h2>Thank you for visting</h2>
     </footer>
+    
   </body>
+  <script>
+  window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+    
+    // Hide main content initially
+    mainContent.style.display = 'none';
+    
+    // After 3 seconds, hide loading screen and show main content
+    setTimeout(function() {
+      loadingScreen.style.display = 'none';
+      mainContent.style.display = 'block';
+    }, 1500);
+  });
+</script>
+
 </html>

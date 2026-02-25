@@ -5,17 +5,30 @@
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
+<div id="loading-screen">
+    <img src="coffee-cup.gif" alt="Loading..." class="loader-gif">
+</div>
+
+<div id="main-content" style="display: none;">
+
 <header class="site-header">
+  <div class="site-header-top-row">
   <div class="logo">
    <a href="index.html">Udan</a>
   </div>
 
+  <a href="index.html" class="home-icon">
+    <img src="home-normal.png" alt="Home" class="home-normal">
+    <img src="home-hover.png" alt="Home" class="home-hover">
+</a>
+</div>
+
     <nav>
-      <a href="index.html" >Home</a>
       <a href="Page1.html">Skill</a>
-      <a href="Page2.html"class="active">Education</a>
+      <a href="Page2.html" class="active">Education</a>
     </nav>
 
+  </header>
   </header>
   <main>
     <h1 style="text-align: center;">My Education</h1>
@@ -24,4 +37,21 @@
   <footer>
     <p style="text-align:center;">Thank you for visiting my education page!</p>
   </footer>
+</div>
+  </body>
+  <script>
+  window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+    
+    // Hide main content initially
+    mainContent.style.display = 'none';
+    
+    // After 3 seconds, hide loading screen and show main content
+    setTimeout(function() {
+      loadingScreen.style.display = 'none';
+      mainContent.style.display = 'block';
+    }, 1500);
+  });
+</script>
 </html>
