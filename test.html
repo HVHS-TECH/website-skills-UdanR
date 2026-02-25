@@ -1,0 +1,107 @@
+ <!DOCTYPE html>
+<html lang=en> 
+<head>
+  <title>Udan's Dtech Test Webpage</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+ <div id="scene">
+  <img id="bird" src="hummingbird.gif" />
+  <img id="fruit" src="cherry.gif" />
+</div>
+</body>
+<footer></footer>
+ <script>
+const bird = document.getElementById("bird");
+const fruit = document.getElementById("fruit");
+
+let birdStart = {
+  x: bird.offsetLeft,
+  y: bird.offsetTop
+};
+
+let state = "idle"; // idle | chasing | returning
+let speed = 0.05;
+
+// 🎯 Click fruit to start
+fruit.addEventListener("click", () => {
+  if (state === "idle") {
+    state = "chasing";
+  }
+});
+
+// 🐦 Movement Loop
+function animate() {
+  if (state === "chasing") {
+    moveToward(fruit.offsetLeft, fruit.offsetTop);
+
+    if (isCloseTo(fruit)) {
+      catchFruit();
+    }
+  }
+
+  if (state === "returning") {
+    moveToward(birdStart.x, birdStart.y);
+
+    if (distance(
+      bird.offsetLeft, bird.offsetTop,
+      birdStart.x, birdStart.y
+    ) < 10) {
+      state = "idle";
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+function moveToward(tx, ty) {
+  let bx = bird.offsetLeft;
+  let by = bird.offsetTop;
+
+  let nx = bx + (tx - bx) * speed;
+  let ny = by + (ty - by) * speed;
+
+  bird.style.left = nx + "px";
+  bird.style.top = ny + "px";
+
+  bird.style.transform =
+    tx < bx ? "scaleX(-1)" : "scaleX(1)";
+}
+
+function isCloseTo(el) {
+  return distance(
+    bird.offsetLeft, bird.offsetTop,
+    el.offsetLeft, el.offsetTop
+  ) < 25;
+}
+
+function distance(x1, y1, x2, y2) {
+  return Math.hypot(x2 - x1, y2 - y1);
+}
+
+function catchFruit() {
+  state = "returning";
+  fruit.style.display = "none";
+
+  setTimeout(() => {
+    fruit.style.display = "block";
+  }, 3000);
+}
+
+animate();
+</script>
+<script>
+let dragging = false;
+
+fruit.addEventListener("mousedown", () => dragging = true);
+document.addEventListener("mouseup", () => dragging = false);
+
+document.addEventListener("mousemove", (e) => {
+  if (dragging && fruit.style.display !== "none") {
+    fruit.style.left = e.clientX - 25 + "px";
+    fruit.style.top = e.clientY - 25 + "px";
+  }
+});
+</script>

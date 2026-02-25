@@ -1,0 +1,26 @@
+#scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #cceeff;
+  overflow: hidden;
+}
+
+#bird, #fruit {
+  position: absolute;
+  user-select: none;
+}
+
+#bird {
+  width: 80px;
+  left: 100px;
+  top: 300px;
+  transition: transform 0.1s linear;
+}
+
+#fruit {
+  width: 50px;
+  left: 600px;
+  top: 250px;
+  cursor: pointer;
+}
