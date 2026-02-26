@@ -130,10 +130,9 @@ nav a.active{
 
 
 .image-container img {
-  width: 100%;
-  height: 100%;
+  width: 25%;
+  height: 25%;
   padding: 5px;
-  object-fit: cover; 
-  object-position: center; 
+  
 }
 
