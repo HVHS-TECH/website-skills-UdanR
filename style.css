@@ -30,8 +30,8 @@ html, body {
 .site-header{
   background: rgba(255,255,255,0.08);
   color: #fff;
-  position: sticky;
-  top: 0;
+  position: absolute;
+ top: 0;
   z-index: 1000;
   -webkit-backdrop-filter: blur(px);
   backdrop-filter: blur(8px);
@@ -41,6 +41,10 @@ html, body {
   margin: 12px auto;
   max-width: 1100px;
   width: calc(100% - 24px);
+  left: 50%; /* Position left edge at 50% mark */
+  transform: translateX(-50%);
+  
+
   padding: 8px 16px;
   overflow: hidden;
   -webkit-background-clip: padding-box;
@@ -134,5 +138,29 @@ nav a.active{
   height: 25%;
   padding: 5px;
   
+}
+
+.site-footer{
+  background: rgba(9, 121, 201, 0.247);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  margin: 12px auto;
+  max-width: 1100px;
+  width: 90%;
+  padding: 8px 16px;
+  overflow: hidden;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.wixwebsite{
+  text-decoration: none;
 }
 
